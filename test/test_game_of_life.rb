@@ -1,3 +1,10 @@
+# Ruby Programming Challenge For Newbiews #11 - Game Of Life
+#
+# test_game_of_life.rb
+#
+# Author: Sam Johnson <samuel.johnson@gmail.com>
+# Date: July 8, 2010
+
 # Rules 
 #   each cell 2 possible states, life of death 
 #   8 neighbours 
@@ -7,13 +14,6 @@
 #    - any dead cell with exactly 3 live neighbours becomes a live cell
 # first generation: apply pattern
 # 
-
-### EXAMPLE ##########################################################################################################
-# WRITE YOUR OWN TESTS, OF COURSE
-# test-driven development is the best, this is just to show you how it should work (if it's not clear from rules)
-# Plus varying parameters on initialization allows you to do cooler things, like play with different sizes, seeds, etc.
-#######################################################################################################################
-
 
 require File.join(File.dirname(__FILE__), '../lib/game_of_life')
 require 'rubygems'

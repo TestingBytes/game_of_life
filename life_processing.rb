@@ -1,6 +1,9 @@
+# Ruby Programming Challenge For Newbiews #11 - Game Of Life
 #
-# This is a Shoes app to visualize your game of life.
+# life_processing.rb
 #
+# Author: Sam Johnson <samuel.johnson@gmail.com>
+# Date: July 8, 2010
 
 require 'lib/game_of_life'
 
