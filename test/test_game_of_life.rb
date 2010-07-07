@@ -29,15 +29,6 @@ class GameOfLifeTest < Test::Unit::TestCase
     assert_equal @game.size, 3
   end
 
-  def test_fill
-    @game.fill(1)
-    assert_equal @game.state[1][1], 1
-    assert_equal @game.state[2][2], 1
-    @game.fill(0)
-    assert_equal @game.state[0][0], 0
-    assert_equal @game.state[1][1], 0
-  end
-
   def test_state_should_start_at_zero
     assert_equal @game.state, 
       [ [0,0,0],
@@ -97,30 +88,30 @@ class GameOfLifeTest < Test::Unit::TestCase
     assert_equal @game.neighbors(1,1), 1
   end
 
-  #def test_should_kill_with_no_neighbours
-  #  @game.state = [[1,0,0],[0,0,0],[0,0,0]]
-  #  after = @game.evolve
-  #  assert_equal after[0][0], 0
-  #end
+  def test_should_kill_with_no_neighbours
+    @game.state = [[1,0,0],[0,0,0],[0,0,0]]
+    after = @game.evolve
+    assert_equal after[0][0], 0
+  end
 
-  #def test_should_kill_with_just_one_neighbour
-  #  @game.state = [[0,0,0],[1,0,0],[1,0,0]]
-  #  after = @game.evolve
-  #  assert_equal after[1][0], 0
-  #  assert_equal after[2][0], 0
-  #end
+  def test_should_kill_with_just_one_neighbour
+    @game.state = [[0,0,0],[1,0,0],[1,0,0]]
+    after = @game.evolve
+    assert_equal after[1][0], 0
+    assert_equal after[2][0], 0
+  end
 
-  #def test_should_kill_with_more_than_3_neighbours
-  #  @game.state = [[1,1,1],[1,1,1],[1,1,1]]
-  #  after = @game.evolve
-  #  assert_equal after, [[0,0,0],[0,0,0],[0,0,0]]
-  #end
+  def test_should_kill_with_more_than_3_neighbours
+    @game.state = [[1,1,1],[1,1,1],[1,1,1]]
+    after = @game.evolve
+    assert_equal after, [[0,0,0],[0,0,0],[0,0,0]]
+  end
 
- #def test_should_give_birth_if_3_neighbours
- #   @game.state = [[1,0,0],[1,1,0],[0,0,0]]
- #   after = @game.evolve
- #   assert_equal after, [[1,1,1],[1,1,1],[1,1,1]]
- # end
+ def test_should_give_birth_if_3_neighbours
+    @game.state = [[1,0,0],[1,1,0],[0,0,0]]
+    after = @game.evolve
+    assert_equal after, [[1,1,1],[1,1,1],[1,1,1]]
+  end
 
  def test_full
   #[0,0,0]     [0,0,0]
@@ -133,8 +124,8 @@ class GameOfLifeTest < Test::Unit::TestCase
 
   after = @game.evolve
 
-  #assert_equal after[0][1], 0
-  #assert_equal after[0][2], 0
+  assert_equal after[0][1], 0
+  assert_equal after[0][2], 0
 
   assert_equal after, [[0,0,0],[0,1,1],[0,1,1]]
  end

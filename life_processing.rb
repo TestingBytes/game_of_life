@@ -2,8 +2,6 @@
 # This is a Shoes app to visualize your game of life.
 #
 
-## REQUIRE YOUR OWN CLASS HERE ##
-
 require 'lib/game_of_life'
 
 class Sketch < Processing::App
@@ -15,8 +13,9 @@ class Sketch < Processing::App
     background 0
     color_mode RGB, 255
     frame_rate 10 
+    @size = 100
 
-    @game = GameOfLife.new(100)
+    @game = GameOfLife.new(@size)
 
     @game.state = @game.state.map { |row| row.map { |cell| rand(2) } }
     @cell_w = width  / @game.size
@@ -35,9 +34,8 @@ class Sketch < Processing::App
 
   def key_pressed
     case key
-    when 'r'
-      @game = GameOfLife.new(100)
-      @game.state = @game.state.map { |row| row.map { |cell| rand(2) } }
+    when 'r':
+      game.state = @game.state.map { |row| row.map { |cell| rand(2) } }
     end
   end
 end
