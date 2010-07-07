@@ -3,10 +3,14 @@
 #
 
 ## REQUIRE YOUR OWN CLASS HERE ##
-require 'game_of_life'
+require 'lib/game_of_life'
+require 'rubygems'
+require 'shoes'
+
 W = 20 # cell width
 
-Shoes.app :title => 'Game of Life'do
+
+SHOES_APP :title => 'Game of Life'do
   background khaki
   stroke pink
   
