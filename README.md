@@ -74,3 +74,7 @@ pure ruby, no gems.
 if you implement another visualization for the game.  The ncurses one is text-based, you could do one in ruby-processing, Shoes, or another toolset of your choice.  As long as it takes the game of life object as a parameter at initialize, and calls 'evolve' on it, you can make many different visualizations - that's one of the advantages of the visitor pattern.
 
 Credits to the Baltimore Ruby User Group for giving me the idea at Bohconf.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/TestingBytes/game_of_life/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
